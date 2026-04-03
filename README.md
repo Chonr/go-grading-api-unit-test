@@ -42,13 +42,13 @@ Now that your server is running, follow these steps to test the Authentication a
 ---
 
 ### 🚀 Task 1: Manual API Testing (Postman)
-You will verify the 5 core endpoints. Note that most endpoints require a **Bearer Token**.
+You will verify the 4 core endpoints. Note that most endpoints require a **Bearer Token**.
 
 1.  **Login & Get Token:**
     * Send the `POST Login` request with the default credentials (`John`/`1234`).
     * Copy the `token` (or `accessToken`) from the response body.
 2.  **Authorize Other Requests:**
-    * For the other 4 requests (Check token, Submit, Check Grade), go to the **Authorization** tab.
+    * For the other 3 requests (Check token, Submit, Check Grade), go to the **Authorization** tab.
     * Select **Type: Bearer Token** and paste your token.
 3.  **Test Grading Logic:**
     * **Submit:** Send `POST /api/grade/submit`. This should save the grade to your `university.db`.
@@ -73,7 +73,7 @@ Manually pasting tokens is slow. Let's automate the "Login -> Store Token" workf
     * Set Token to `{{jwt_token}}`.
     * Ensure all individual requests are set to **"Inherit auth from parent"**.
 3.  **Run Collection Runner:**
-    Run the entire folder to ensure the sequence (Login -> Calculate -> Submit -> Check) works perfectly without manual intervention.
+    Run the entire folder to ensure the sequence (Login -> Submit -> Check) works perfectly without manual intervention.
 
 ---
 
