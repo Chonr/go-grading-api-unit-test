@@ -1,3 +1,7 @@
+### Name: Chonrathan Sinlapachan | Sudent ID: 6609650269
+
+---
+
 # Go Grading API – Testing & Unit Testing Workshop
 
 Welcome to the **Go Grading API Workshop**. This repository provides a hands-on environment to practice API integration testing and Go unit testing patterns.
