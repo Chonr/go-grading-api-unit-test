@@ -1,4 +1,4 @@
-### Name: Chonrathan Sinlapachan | Sudent ID: 6609650269
+### Name: Chonrathan Sinlapachan | Student ID: 6609650269
 
 ---
 
