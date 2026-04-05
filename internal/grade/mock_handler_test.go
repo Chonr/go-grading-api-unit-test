@@ -79,12 +79,14 @@ func TestSubmitGradeHandler_ServiceError(t *testing.T) {
 
 func TestGetGradeHandler_NotFound(t *testing.T) {
 	gin.SetMode(gin.TestMode)
+
 	mockService := &MockService{ShouldReturnError: true}
 	handler := NewHandler(mockService)
+
 	router := gin.Default()
 	router.GET("/grade/:studentId", handler.GetGradeHandler)
 
-	req, _ := http.NewRequest("GET", "/grade/99999", nil)
+	req, _ := http.NewRequest("GET", "/grade/non-existent-id", nil)
 	w := httptest.NewRecorder()
 
 	router.ServeHTTP(w, req)

@@ -68,8 +68,47 @@ func (m *MockRepositoryError) InsertGrade(g Response, h, mid, f float64) error {
 
 func TestSubmitGrade_RepoError(t *testing.T) {
 	service := NewGradeService(&MockRepositoryError{})
+
 	req := Request{StudentID: "6609650269", Homework: 80, Midterm: 70, Final: 90}
-	_, err := service.SubmitGrade(req)
+	res, err := service.SubmitGrade(req)
+
 	assert.Error(t, err)
+	assert.Nil(t, res)
+	assert.Equal(t, "insert failed", err.Error())
+}
+
+func TestSubmitGrade_Success(t *testing.T) {
+	mockRepo := &MockRepository{}
+	service := NewGradeService(mockRepo)
+
+	req := Request{
+		StudentID: "6609650269",
+		Homework:  80,
+		Midterm:   70,
+		Final:     90,
+	}
+
+	res, err := service.SubmitGrade(req)
+
+	assert.NoError(t, err)
+	assert.NotNil(t, res)
+	assert.Equal(t, "A", res.Grade)
+}
+
+type MockRepositoryInsertError struct{ MockRepository }
+
+func (m *MockRepositoryInsertError) InsertGrade(g Response, h, mi, f float64) error {
+	return errors.New("insert failed")
+}
+
+func TestSubmitGrade_InsertError(t *testing.T) {
+	mockRepo := &MockRepositoryInsertError{}
+	service := NewGradeService(mockRepo)
+
+	req := Request{StudentID: "6609650269", Homework: 80, Midterm: 70, Final: 90}
+	res, err := service.SubmitGrade(req)
+
+	assert.Error(t, err)
+	assert.Nil(t, res)
 	assert.Equal(t, "insert failed", err.Error())
 }

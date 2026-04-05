@@ -11,6 +11,6 @@ func (m *MockRepository) GetGradeByStudentID(studentID string) (*Response, error
 }
 
 func (m *MockRepository) InsertGrade(g Response, homework, midterm, final float64) error {
-	//TODO implement me
-	panic("implement me")
+
+	return nil
 }

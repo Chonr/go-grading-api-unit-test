@@ -9,7 +9,7 @@ go-grading-api/internal/grade/handler.go:32.51,36.16 3 1
 go-grading-api/internal/grade/handler.go:36.16,39.3 2 1
 go-grading-api/internal/grade/handler.go:41.2,41.20 1 1
 go-grading-api/internal/grade/mock_repository.go:5.83,11.2 1 1
-go-grading-api/internal/grade/mock_repository.go:13.90,15.23 1 0
+go-grading-api/internal/grade/mock_repository.go:13.90,16.2 1 1
 go-grading-api/internal/grade/mock_service.go:11.71,13.25 1 1
 go-grading-api/internal/grade/mock_service.go:13.25,15.3 1 1
 go-grading-api/internal/grade/mock_service.go:16.2,20.8 1 1
@@ -23,7 +23,7 @@ go-grading-api/internal/grade/repository.go:50.16,52.3 1 0
 go-grading-api/internal/grade/repository.go:54.2,54.18 1 0
 go-grading-api/internal/grade/service.go:16.68,26.16 4 1
 go-grading-api/internal/grade/service.go:26.16,28.3 1 1
-go-grading-api/internal/grade/service.go:30.2,30.18 1 0
+go-grading-api/internal/grade/service.go:30.2,30.18 1 1
 go-grading-api/internal/grade/service.go:33.72,34.21 1 1
 go-grading-api/internal/grade/service.go:34.21,36.3 1 1
 go-grading-api/internal/grade/service.go:38.2,39.16 2 1
